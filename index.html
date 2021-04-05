@@ -58,14 +58,46 @@
             
         </div>
     </div>
-    
-    <div class="col-md-7">
+    <div class="row">
+    <div class="col-7">
         <form>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <label for="exampleInputEmail1" class="form-label">Voornaam</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Naam</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="gemeente mb-3">
+              <label for="land">Land</label>
+              <select id="land" class="form-control form-select" name="land">
+                  <option value="België" selected>België</option>
+                  <option value="Suriname">Suriname</option>
+                  <option value="Nederland">Nederland</option>
+                  <option value="Spanje">Spanje</option>
+                  <option value="Frankrijk">Frankrijk</option>
+              </select>
+          </div>
+          <div class="gemeente mb-3">
+            <label for="dorp">Provincie</label>
+            <select id="dorp" class="form-control form-select" name="land">
+                <option value="Antwerpen" selected>Antwerpen</option>
+                <option value="Paramaribo">Paramaribo</option>
+                <option value="Gelderland">Gelderland</option>
+                <option value="	Vlaams-Brabant">	Vlaams-Brabant</option>
+                <option value="Noord-Holland">Noord-Holland</option>
+                <option value="Wanica">Wanica</option>
+                <option value="Utrecht">Utrecht</option>
+                <option value="	Luik">Luik</option>
+                <option value="Utrecht">Bretagne</option>
+            </select>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Gebruikersnaam</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
               <input type="password" class="form-control" id="exampleInputPassword1">
@@ -75,8 +107,10 @@
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+
           </form>
-          <div class="col-md-5">
+        </div>
+          <div class="col-5">
             <div class="alert alert-primary" role="alert">
                 A simple primary alert—check it out!
               </div>
@@ -102,7 +136,8 @@
                 A simple dark alert—check it out!
               </div>
           </div>
-        </div>
+        
+      </div>
         </main>
         <script>
             function validateForm(){
