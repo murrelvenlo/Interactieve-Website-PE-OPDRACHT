@@ -142,7 +142,7 @@
                             <div class="land col-md-4">
                                 <label for="land">Land</label>
                                 <select id="Land" class="form-control form-select" name="land">
-                                    <option value="" disabled selected>Kies een land</option>
+                                    <option value="Landen" disabled selected>Kies een land</option>
                                     <option value="België">België</option>
                                     <option value="Frankrijk">Frankrijk</option>
                                     <option value="Nederland">Nederland</option>
@@ -154,7 +154,7 @@
                             <div class="provincie col-md-5">
                                 <label for="provincie">Provincie</label>
                                 <select id="Provincie" class="form-control form-select" name="provincie">
-                                    <option value="" disabled selected>Kies een Provincie</option>
+                                    <option value="Provincies" disabled selected>Kies een Provincie</option>
                                     <option value="Antwerpen">Antwerpen</option>
                                     <option value="Bretagne">Bretagne</option>
                                     <option value="Gelderland">Gelderland</option>
@@ -296,6 +296,7 @@
             } else {
                 document.getElementById("s-meldingen").style.visibility = "visible";
                 document.getElementById("p-meldingen").style.visibility = "visible";
+                document.getElementById("gevaar").style.visibility = "hidden";
             }
 
 
@@ -309,8 +310,8 @@
             var veldPA = document.getElementById(veld); //Het veld hier bedoeld voor voornaam, naam, gebruikersnaam etc
 
             if (veldPA.value == "" || veldPA.value == null) { //Als de twee velden niet zijn ingegeven
-                if (veld == "Provincie" || veld == "Adress") {
-                    melding = veldje + " is vereist <br>"
+                if (veld == "Provincie" || veld == "Adres") {
+                    melding = veldPA.value + " is vereist <br>";
                 } else {
                     melding = "het veld " + veld.toLowerCase() + " is verplicht <br>";
                 }
