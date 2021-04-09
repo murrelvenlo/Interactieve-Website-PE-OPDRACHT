@@ -9,9 +9,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body, html{
+        width: 100%;
+
+      }
+      .mijnContainer{
+        padding: 60px;
+            text-align: center;
+            background: linear-gradient(180deg,  #cc14dc, #0cacfc);
+            color: white;
+      }
+      .bg-kleur{
+        background-color:aqua;
+      }
+      .optioneel{
+        background:#cccc;
+        color:white;
+        padding:5px;
+        position: fixed;
+        top: 40%;
+        left: -800px;
+        white-space: nowrap;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-kleur">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,6 +76,13 @@
           </div>
         </div>
       </nav>
+      <div class="mijnContainer">
+        <h1>Registratieformulier</h1>
+        
+      </div>
+      <div class="optioneel">
+          <h4>Hier kunt u zich registreren!</h4>
+      </div>
       <main class="container">
       <h1>Registreer</h1>
     <p class="lead">Meld je aan..</p>
@@ -57,10 +93,11 @@
         <div class="col-md-5">
             
         </div>
-    </div>
+    
     <div class="row">
     <div class="col-7">
-        <form>
+      <div id="error"></div>
+        <form id="formulier">
             <div class="mb-3">
               <label for="voornaam" class="form-label">Voornaam</label>
               <input type="text" class="form-control" id="voornaam" aria-describedby="voornaam">
@@ -69,28 +106,33 @@
               <label for="naam" class="form-label">Naam</label>
               <input type="text" class="form-control" id="naam" aria-describedby="naam">
             </div>
+            <div class="mb-3">
+              <label for="adres" class="form-label">Adres</label>
+              <input type="text" class="form-control" id="adres" aria-describedby="adres">
+            </div>
             <div class="gemeente mb-3">
               <label for="land">Land</label>
               <select id="land" class="form-control form-select" name="land">
                   <option value="België" selected>België</option>
-                  <option value="Suriname">Suriname</option>
+                  <option value="Frankrijk">Frankrijk</option>
                   <option value="Nederland">Nederland</option>
                   <option value="Spanje">Spanje</option>
-                  <option value="Frankrijk">Frankrijk</option>
-              </select>
+                  <option value="Suriname">Suriname</option>
+                </select>
           </div>
           <div class="gemeente mb-3">
             <label for="dorp">Provincie</label>
             <select id="dorp" class="form-control form-select" name="land">
                 <option value="Antwerpen" selected>Antwerpen</option>
-                <option value="Paramaribo">Paramaribo</option>
+                <option value="Bretagne">Bretagne</option>
                 <option value="Gelderland">Gelderland</option>
-                <option value="	Vlaams-Brabant">	Vlaams-Brabant</option>
+                <option value="Luik">Luik</option>
                 <option value="Noord-Holland">Noord-Holland</option>
-                <option value="Wanica">Wanica</option>
+                <option value="Paramaribo">Paramaribo</option>
+                <option value="Parijs">Parijs</option>
                 <option value="Utrecht">Utrecht</option>
-                <option value="	Luik">Luik</option>
-                <option value="Utrecht">Bretagne</option>
+                <option value="Vlaams-Brabant">	Vlaams-Brabant</option>
+                <option value="Wanica">Wanica</option>  
             </select>
         </div>
         <div class="mb-3">
@@ -100,13 +142,17 @@
         </div>
             <div class="mb-3">
               <label for="wachtwoord" class="form-label">Wachtwoord</label>
-              <input type="wachtwoord" class="form-control" id="wachtwoord">
+              <input type="password" class="form-control" id="wachtwoord">
+            </div>
+            <div class="mb-3">
+              <label for="wachtwoord2" class="form-label">Herhaal uw wachtwoord</label>
+              <input type="password" class="form-control" id="wachtwoord2">
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="check">
               <label class="form-check-label" for="check">Check me out</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="validateForm()">Submit</button>
 
           </form>
         </div>
@@ -139,14 +185,37 @@
         
       </div>
         </main>
-        <!--<script>
-            function validateForm(){
-                let voornaam = document.getElementById("voornaam").value;
-                let resultaat="";
+       <script>
+         
 
-                if(voornaam)
-            }
-        </script>-->
+         // functie voor controle van gebruikersnaam, met één parameter
+        // function validateEmail(emailadres){
+         // if(!emailadres)
+           // return false;
+         //}
+
+
+
+         
+         let veld = document.getElementById('voornaam')
+         let veld = document.getElementById('naam')
+         let veld = document.getElementById('gebruikersnaam')
+         let veld = document.getElementById('adres')
+         let veld = document.getElementById('land')
+         let veld = document.getElementById('provincie')
+         let formulier = document.getElementById('formulier')
+         let errorElement = document.getElementById('error')
+
+         //functie voor de controle van leeg velden, met 2 parameters. 
+         function checkEmptyField(veld, melding){
+          if(veld.value == '' || veld.value == null)
+          melding.push();
+         };
+         checkEmptyField(any, "Het veld voornaam is vereist");
+
+         formulier.addEventListener('submit', (e) =>{e.preventDefault()})
+           
+       </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
