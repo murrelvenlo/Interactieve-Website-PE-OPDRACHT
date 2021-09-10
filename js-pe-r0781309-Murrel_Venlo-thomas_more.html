@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Registreren bij Anoroc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            width: 100%;
+        }
+
+        /*
+        .gekleurd{
+            background: linear-gradient(180deg, aqua, #fff);
+        }
+*/
+        .mijnContainer {
+            padding: 25px;
+            text-align: center;
+            background: linear-gradient(180deg, #08088a, #0cacfc);
+            color: white;
+        }
+
+        p,
+        label {
+            font-family: Verdana;
+        }
+
+        label {
+            font-size: 13px;
+        }
+
+        .bg-kleur,
+        footer {
+            background-color: aqua;
+        }
+
+        button {
+            font-size: bold;
+        }
+
+        .optioneel {
+            background: #cccc;
+            color: white;
+            padding: 5px;
+            position: fixed;
+            top: 40%;
+            left: -800px;
+            white-space: nowrap;
+        }
+
+        .knopje {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            height: 60px;
+        }
+
+        .ft {
+            padding-top: 20px;
+            ;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="gekleurd">
+        <div class="mijnContainer">
+            <h1>Registratieformulier</h1>
+
+        </div>
+        <div class="optioneel">
+            <h4>Hier kunt u zich registreren!</h4>
+        </div>
+        <main class="container">
+            <h1>Registreer</h1>
+            <p class="lead">Meld je aan bij Anoroc Services, wij beschermen jouw software tegen malware!</p>
+
+            <div class="row">
+                <div class="col-md-7">
+
+                    <form id="formulier" name="formulier">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Voornaam">Voornaam</label>
+                                <input type="text" class="form-control" id="Voornaam" name="Voornaam" placeholder="Uw voornaam">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Naam">Naam</label>
+                                <input type="text" class="form-control" id="Naam" placeholder="Uw naam">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Gebruikersnaam">Gebruikersnaam</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">@</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="Gebruikersnaam" name="Gebruikersnaam" placeholder="r0781309">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="Emailadres" placeholder="mail@example.be">
+                            </div>
+                        </div>
+                        <div class="row" id="Wachtwoorden">
+                            <div class="form-group col-md-6">
+                                <label for="wachtwoord">Wachtwoord</label>
+                                <input type="password" class="form-control" id="Wachtwoord">
+                                <small id="wachtwoordControle" class="form-text text-muted">Je wachtwoord moet minstens 8 tekens lang zijn</small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="wachtwoord2" class="form-label">Herhaal uw wachtwoord</label>
+                                <input type="password" class="form-control" id="Wachtwoord2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="adres" class="form-label">Adres</label>
+                                <input type="text" class="form-control" id="Adres" aria-describedby="adres" placeholder="Uw adres en huisnummer">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="land col-md-4">
+                                <label for="land">Land</label>
+                                <select id="Land" class="form-control form-select" name="land">
+                                    <option value="Landen" disabled selected>Kies een land</option>
+                                    <option value="België">België</option>
+                                    <option value="Frankrijk">Frankrijk</option>
+                                    <option value="Nederland">Nederland</option>
+                                    <option value="Spanje">Spanje</option>
+                                    <option value="Suriname">Suriname</option>
+                                </select>
+                            </div>
+
+                            <div class="provincie col-md-5">
+                                <label for="provincie">Provincie</label>
+                                <select id="Provincie" class="form-control form-select" name="provincie">
+                                    <option value="Provincies" disabled selected>Kies een Provincie</option>
+                                    <option value="Antwerpen">Antwerpen</option>
+                                    <option value="Bretagne">Bretagne</option>
+                                    <option value="Gelderland">Gelderland</option>
+                                    <option value="Luik">Luik</option>
+                                    <option value="Noord-Holland">Noord-Holland</option>
+                                    <option value="Paramaribo">Paramaribo</option>
+                                    <option value="Parijs">Parijs</option>
+                                    <option value="Utrecht">Utrecht</option>
+                                    <option value="Vlaams-Brabant"> Vlaams-Brabant</option>
+                                    <option value="Wanica">Wanica</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="postcode" class="form-label">Postcode</label>
+                                <input type="text" class="form-control" id="Postcode" aria-describedby="postcode">
+                            </div>
+                        </div>
+                        <hr>
+
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Check">
+                                    <h4>Hou me op de hoogte</h4>
+                                </label>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="check1">
+                                    <label class="custom-control-label" for="check1">Inschrijven voor onze
+                                        nieuwsbrief!</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="check2">
+                                    <label class="custom-control-label" for="check2">Ik ga akkoord met de algemene
+                                        voorwaarden</label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Check">
+                                    <h4>Betaling</h4>
+                                </label>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio1">Banking app</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio2">Overschrijving</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio3">Visa card</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio4">PayPal</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary col-md-12 knopje" onclick="validateForm()">Wave your magic wand</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5 alerts" id="alerts">
+
+                    <div id="s-meldingen" class="alert alert-success" role="alert">
+                        <h4>Goed Gedaan</h4>
+                        <p>Aww yeah, je werdt geregistreerd</p>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <h4>Yikes, errors</h4>
+                        <p id="gevaar"></p>
+                    </div>
+
+
+                    <div id="p-meldingen" class="alert alert-primary" role="alert">
+                        <h4>Betalingswijze</h4>
+                        <p id="betalingswijze"></p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="row">
+            <p class="col-md-12 text-center ft">
+                <strong>&copy; <span>Anoroc</span> for software security</strong>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let scherm = document.getElementById('alerts');
+        scherm.style.visibility = "hidden";
+
+
+        function validateForm() {
+
+            //Met deze functie verberg ik de drie alert
+            let scherm = document.getElementById('alerts');
+            scherm.style.visibility = "hidden";
+
+            //Ik heb hier alle id's in een array gestoken i.p.v. ze get documen.getElementById. Zo vermijd ik veel type-werk
+            var id_s = ["Voornaam", 'Naam', 'Gebruikersnaam', 'Emailadres', 'Wachtwoord', 'Wachtwoord2', 'Adres', 'Land', 'Provincie'];
+
+            //Ik maak hier de array voor de foutmeldingen
+            let error = [];
+
+            for (let i = 0; i < id_s.length; i++) {
+                error.push(checkEmptyField(id_s[i]), "");
+            }
+            //In deze functie roep ik alle methoden op
+            validateEmail("Emailadres");
+
+            error.push(valideWachtwoord('Wachtwoorden'));
+            error.push(checkPC("Postcode"));
+
+            console.log(error);
+            error.push(validatePayment("customRadio"));
+
+            error.push(algemeneVoorwaarden('check2'));
+            //Met deze methode wil ik alle lege strings uit de array verwijderen
+            //Hieronder kunt u mijn inspiratie zien.
+            //https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+            error = error.filter(function(e) {
+                return e
+            }); 
+
+
+
+            console.log(error);
+            //Hier worden alerts weer getoond als er geen foutmeldingen zijn
+            if (error != "") {
+                document.getElementById("gevaar").innerHTML = error.join("");
+                for (let element of document.querySelectorAll('.alert-danger')) element.style.visibility = 'visible';
+            } else {
+                document.getElementById("s-meldingen").style.visibility = "visible";
+                document.getElementById("p-meldingen").style.visibility = "visible";
+                document.getElementById("gevaar").style.visibility = "hidden";
+            }
+
+
+        }
+
+
+
+        function checkEmptyField(veld, melding) {
+
+            // Ik maak eerst voor de velden provincie en adres een variabel met name veldPA
+            var veldPA = document.getElementById(veld); //Het veld hier bedoeld voor voornaam, naam, gebruikersnaam etc
+
+            if (veldPA.value == "" || veldPA.value == null) { //Als de twee velden niet zijn ingegeven
+                if (veld == "Provincie" || veld == "Adres") {
+                    melding = veldPA.value + " is vereist <br>";
+                } else {
+                    melding = "het veld " + veld.toLowerCase() + " is verplicht <br>";
+                }
+            }
+
+            console.log(melding);
+            return melding
+        }
+
+
+
+
+        function validateEmail(emailadres) {
+            //Mijn inspiraties
+            //https://stackoverflow.com/questions/336210/regular-expression-for-alphanumeric-and-underscores
+            //https://www.edureka.co/blog/javascript-email-validation/
+            let domein = document.getElementById(emailadres);
+            let gebruikersnaam = document.getElementById('Gebruikersnaam').value;
+            let letters = /^[a-zA-Z]*$/;
+            let nummers = /^[0-9]*$/;
+            let underscores = /^[\w]*$/;
+            let koppeltekenPunt = ["-", "."];
+            let klopHet = false; //een boolean
+
+            //De gebruikersnaam moet minstens één karakter lang zijn
+            if (gebruikersnaam.length < 0) {
+                for (let i = 0; i <= koppeltekenPunt.length; i++) {
+                    if (gebruikersnaam[0] != koppeltekenPunt[i]) {
+                        klopHet = true;
+                    } else {
+                        return false;
+                    }
+                }
+            } else {
+                return false;
+            }
+
+            //De gebruikersnaam moet letters, nummers of underscores bevatten
+            if (nummers.test(gebruikersnaam) || underscores.test(gebruikersnaam)) {
+                klopHet = true;
+            } else {
+                return false;
+            }
+            //            //Het domein moet starten met een letter of een nummer
+            if (domein != "") {
+                if (letters.test(domein[0]) || nummers.test(domein[0])) {
+                    klopHet = true;
+                } else {
+                    return false;
+                }
+            }
+            //Het domein mag een punt of koppeltekens bevatten, maar niet als eerste karakter
+            for (let i = 1; i <= domein.length; i++) {
+                if (domein[i].value == "." || (domein[i].value == "-")) {
+                    console.log(domein[i].value);
+                }
+            }
+            console.log(klopHet);
+            return true;
+        }
+
+
+
+
+
+        function valideWachtwoord() {
+            let meldingen = "";
+
+            let wachtwoord = document.getElementById('Wachtwoord');
+            let wachtwoord2 = document.getElementById('Wachtwoord2');
+
+
+            //Als er geen wachtwoord ingegeven is, kan je niet uitmaken hoe lang het wachtwoord is, "That's obvious"
+            if (wachtwoord.value != "" && wachtwoord.value.length <= 7) {
+                meldingen += ' <br> Het aantal karakters in wachtwoord moet hoger zijn dan 7';
+            } else {
+                if (wachtwoord2.value != "" && wachtwoord2.value != wachtwoord.value) {
+                    meldingen += ' <br> Je wachtwoorden komen niet overeen.';
+                }
+
+            }
+            return meldingen;
+
+
+        }
+
+        function validatePayment(veld) {
+
+            //https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_radio_checked4
+            //Bovenstaande link als inspiratie gebruikt
+            var keuze = "<br> Welke betaalmethode kiest u?";
+
+            let keuze1 = document.getElementById(veld + "1");
+            let keuze2 = document.getElementById(veld + "2");
+            let keuze3 = document.getElementById(veld + "3");
+            let keuze4 = document.getElementById(veld + "4");
+
+            var betaling = " <br> Je betalingswijze is  ";
+            var betaling2 = " <br> Je betalingswijze is  "; // Ik maak dit om het later vergelijken met de eigenlijke betaling
+
+            if (keuze1.checked) {
+                betaling = "Banking app";
+                console.log(betaling);
+            } else if (keuze2.checked) {
+                betaling = "Overschrijving";
+                console.log(betaling);
+            } else if (keuze3.checked) {
+                betaling = "Visa card";
+                console.log(betaling);
+            } else if (keuze4.checked) {
+                betaling = "PayPal";
+                console.log(betaling);
+
+            } else {
+                return keuze;
+            }
+            if (betaling2 != betaling) {
+                document.getElementById("betalingswijze").innerHTML = "Je betalingsmethode is " + betaling;
+                console.log(document.getElementById("betalingswijze").innerHTML);
+                keuze = "";
+            }
+            return keuze;
+        }
+
+        function checkPC(veld) {
+            var melding = "";
+            if (veld == "postcode") {
+                let code = document.getElementById(veld);
+                if (code.value == "") {
+                    melding += "Het veld " + veld + " is vereist.";
+                } else if (code.value < 1000 || code.value > 9999) {
+                    melding += "de waarde van de ${'veld'} moet liggen tussen 1000 en 9999";
+                } else {
+                    return melding = "";
+                }
+            }
+
+            console.log(melding);
+            return melding;
+
+        }
+
+        function algemeneVoorwaarden(veld) {
+            var meldingen = "";
+            //foutmelding aangemaakt, omdat  de checkbox false is.
+            if (!document.getElementById(veld).checked) {
+                meldingen += "<br> Je moet de algemene voorwaardens accepteren.";
+            }
+            console.log(meldingen);
+            return meldingen;
+        }
+
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <scripét src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></scripét>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <scripét src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></scripét>
+    <scripét src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></scripét>
+
+</body>
+
+</html>
